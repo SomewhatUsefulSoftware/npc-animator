@@ -22,6 +22,6 @@ It might also be useful if you want to make role-playing videos.
 - Run an animation on all spawned NPCs at the same time.
 
 # Instructional/Example Video
-If you aren't sure if you want to use this plugin or you want to start learning how to make your own plugin, then the video linked below might be useful.
+I will have a video available soon that shows the development process of this plugin. Check it out if you're interested in learning more about the plugin, or you want to get started learning how to make your own plugin.
 
-The video shows the development of the NPC Animator plugin and what you can do with it.
+https://www.youtube.com/@SomewhatUsefulSoftware
