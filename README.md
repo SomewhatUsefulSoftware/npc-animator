@@ -1,4 +1,4 @@
-# NPC Animator
+# NPC Animator Plugin for RuneLite
 Save and run custom animations on NPCs and on your own character.
 
 Any animation that's in the game can be run on any NPC or on your own player.
@@ -11,7 +11,7 @@ Not recommended for using when in combat or doing high risk activities because a
 This plugin is intended to be used to make the NPCs feel more alive and to give them a little extra personality.
 It might also be useful if you want to make role-playing videos.
 
-# Features
+## Features
 - Save any animation in the game with your own customizable name for it.
 - Run any animation on your own player.
 - Run any animation on any NPC.
