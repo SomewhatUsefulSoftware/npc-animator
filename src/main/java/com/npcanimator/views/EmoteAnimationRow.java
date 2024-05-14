@@ -208,7 +208,7 @@ public class EmoteAnimationRow extends JPanel {
 
     void runSelectedAnimation() {
         try {
-            this.plugin.runAnimationFromList(this.id);
+            this.plugin.runAnimationOnPlayer(this.id);
         }
         catch (Exception e) {
             // Failed to run selected animation

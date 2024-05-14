@@ -51,6 +51,7 @@ public class AnimatedNPC {
     public void setNPCObject(NPC npc) {
         this.npc = npc;
         this.npcList.clear();
+        this.idCount = 1;
         this.npcList.add(npc);
     }
 

@@ -108,6 +108,13 @@ public class NPCAnimatorPlugin extends Plugin {
         switchProfile(profileKey);
     }
 
+    @Override
+    protected void shutDown() {
+        clientToolbar.removeNavigation(navButton);
+        spawnedAnimatedNPCMap.clear();
+        savedAnimatedNPCMap.clear();
+    }
+
 
     /*   SUBSCRIPTIONS   */
 
@@ -205,6 +212,7 @@ public class NPCAnimatorPlugin extends Plugin {
                 savedAnimatedNPC = savedAnimatedNPCMap.get(npcID);
                 savedAnimatedNPC.increaseIDCount(npc);
                 savedAnimatedNPCMap.put(npcID, savedAnimatedNPC);
+                SwingUtilities.invokeLater(() -> panel.setSavedNPCVisible(npcID, true));
             }
         }
     }
@@ -291,7 +299,7 @@ public class NPCAnimatorPlugin extends Plugin {
 
     /*   Run Animation Code   */
 
-    public void runAnimationFromList(int animationID) {
+    public void runAnimationOnPlayer(int animationID) {
         try {
             this.myPlayer.setAnimation(animationID);
             this.myPlayer.setAnimationFrame(0);

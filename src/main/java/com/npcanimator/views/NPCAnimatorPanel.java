@@ -72,8 +72,7 @@ public class NPCAnimatorPanel extends PluginPanel
     void runSelectedAnimation() {
         try {
             int animationID = Integer.parseInt(playerAnimationJSpinner.getValue().toString());
-            this.myPlayer.setAnimation(animationID);
-            this.myPlayer.setAnimationFrame(0);
+            this.plugin.runAnimationOnPlayer(animationID);
         }
         catch (Exception e) {
             // Failed to run animation
@@ -81,8 +80,12 @@ public class NPCAnimatorPanel extends PluginPanel
     }
 
     void stopSelectedAnimation() {
-        this.myPlayer.setAnimation(-1);
-        this.myPlayer.setAnimationFrame(0);
+        try {
+            this.plugin.runAnimationOnPlayer(-1);
+        }
+        catch (Exception e) {
+            // Failed to stop animation
+        }
     }
 
     void playAnimationOnAllSaved() {
@@ -724,6 +727,7 @@ public class NPCAnimatorPanel extends PluginPanel
 
     public void addSavedNPC(final AnimatedNPC animatedNPC) {
         NPCAnimationRow npcRow = new NPCAnimationRow(plugin, animatedNPC, true);
+        npcRow.setSavedNPCVisible(true);
         this.savedNPCAnimationsContainer.add(npcRow);
         this.savedNPCAnimationsContainer.revalidate();
         this.savedAnimatedNPCRowMap.put(animatedNPC.getId(), npcRow);
